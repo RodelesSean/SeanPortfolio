@@ -416,6 +416,90 @@
     font-size: 10px;
   }
 
+  /* ─── CERTIFICATES ─── */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px;
+  }
+  .cert-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .cert-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--amber), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .cert-card:hover { border-color: rgba(255,179,0,0.4); background: var(--bg3); }
+  .cert-card:hover::before { opacity: 1; }
+  .cert-date {
+    font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.15em; margin-bottom: 10px;
+  }
+  .cert-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 13px; font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+  .cert-event {
+    font-size: 12px; color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .cert-role {
+    font-size: 11px; color: var(--green);
+    margin-top: 6px;
+    letter-spacing: 0.1em;
+  }
+  .cert-role::before { content: '> '; }
+
+  /* ─── EDUCATION ─── */
+  .edu-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+    max-width: 640px;
+  }
+  .edu-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .edu-card:hover { border-color: rgba(0,229,255,0.4); background: var(--bg3); }
+  .edu-card:hover::before { opacity: 1; }
+  .edu-school {
+    font-family: 'Orbitron', monospace;
+    font-size: 15px; font-weight: 700;
+    color: var(--cyan);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+  }
+  .edu-degree {
+    font-size: 13px; color: var(--text);
+    margin-bottom: 6px;
+  }
+  .edu-grad {
+    font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+  .edu-grad::before { content: '> Graduated: '; color: var(--green-dim); }
+
   /* ─── FOOTER ─── */
   footer {
     border-top: 1px solid var(--border);
@@ -473,6 +557,8 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certs</a></li>
+    <li><a href="#education">Education</a></li>
   </ul>
   <div class="nav-status">
     <div class="status-dot"></div>
@@ -510,7 +596,7 @@
       <div class="stat-label">Projects Shipped</div>
     </div>
     <div class="stat">
-      <div class="stat-num">5</div>
+      <div class="stat-num">4</div>
       <div class="stat-label">Companies</div>
     </div>
   </div>
@@ -527,11 +613,11 @@
     <div class="skill-category">
       <div class="skill-cat-label">Languages</div>
       <div class="skill-tags">
+        <span class="skill-tag">Dart</span>
         <span class="skill-tag">HTML</span>
         <span class="skill-tag">CSS</span>
         <span class="skill-tag">Java</span>
         <span class="skill-tag">C</span>
-        <span class="skill-tag">Dart</span>
       </div>
     </div>
     <div class="skill-category">
@@ -539,6 +625,15 @@
       <div class="skill-tags">
         <span class="skill-tag">Flutter</span>
         <span class="skill-tag">FlutterFlow</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-label">Backend &amp; APIs</div>
+      <div class="skill-tags">
+        <span class="skill-tag">REST API</span>
+        <span class="skill-tag">Firebase</span>
+        <span class="skill-tag">Supabase</span>
+        <span class="skill-tag">Xano</span>
       </div>
     </div>
     <div class="skill-category">
@@ -550,32 +645,29 @@
         <span class="skill-tag">Miro</span>
         <span class="skill-tag">Jira</span>
         <span class="skill-tag">CodeMagic</span>
+        <span class="skill-tag">Linear</span>
       </div>
     </div>
     <div class="skill-category">
-      <div class="skill-cat-label">Technologies</div>
+      <div class="skill-cat-label">Core Competencies</div>
       <div class="skill-tags">
-        <span class="skill-tag">Firebase</span>
-        <span class="skill-tag">Supabase</span>
-        <span class="skill-tag">REST API</span>
-        <span class="skill-tag">Xano</span>
+        <span class="skill-tag">Mobile App Dev</span>
+        <span class="skill-tag">Frontend Dev</span>
+        <span class="skill-tag">API Integration</span>
+        <span class="skill-tag">State Management</span>
+        <span class="skill-tag">Debugging</span>
+        <span class="skill-tag">System Design</span>
       </div>
     </div>
     <div class="skill-category">
-      <div class="skill-cat-label">Office</div>
+      <div class="skill-cat-label">Practices &amp; Other</div>
       <div class="skill-tags">
-        <span class="skill-tag">MS Word</span>
-        <span class="skill-tag">Excel</span>
-        <span class="skill-tag">PowerPoint</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-label">Other</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Problem Solving</span>
-        <span class="skill-tag">Low Code Dev</span>
+        <span class="skill-tag">Low-Code Dev</span>
+        <span class="skill-tag">Agile</span>
+        <span class="skill-tag">Code Optimization</span>
         <span class="skill-tag">Leadership</span>
-        <span class="skill-tag">System Troubleshooting</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">MS Office</span>
       </div>
     </div>
   </div>
@@ -664,7 +756,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" style="max-width:1200px;margin:0 auto;padding-bottom:120px;">
+<section id="projects" style="max-width:1200px;margin:0 auto;">
   <div class="section-header fade-in">
     <div class="section-index">03</div>
     <div class="section-title">// PROJECTS</div>
@@ -685,13 +777,13 @@
 
     <div class="project-card fade-in">
       <div class="project-year">2025</div>
-      <div class="project-name">LBC Express</div>
+      <div class="project-name">LBC EXPRESS APP</div>
       <ul class="project-bullets">
         <li>Led the entire frontend mobile application development and managed the frontend team and interns.</li>
         <li>Developed core modules including Login, all Bookings, and User Profile screens.</li>
         <li>Assisted co-developers in troubleshooting and resolving blockers.</li>
         <li>Led deployment of the app to Google Play Store and Apple App Store.</li>
-        <li>Managed LBC’s Firebase infrastructure.</li>
+        <li>Managed LBC's Firebase infrastructure.</li>
       </ul>
     </div>
 
@@ -700,7 +792,7 @@
       <div class="project-name">SHAE FITNESS APP</div>
       <ul class="project-bullets">
         <li>Developed Screens and Components in a shared Library project, then integrated the library into the main Shae app.</li>
-        <li>Implemented REST API integrations.</li.>
+        <li>Implemented REST API integrations.</li>
       </ul>
     </div>
 
@@ -738,7 +830,7 @@
       <ul class="project-bullets">
         <li>Built a Web and Tablet App for internal Hydroponics plant management.</li>
         <li>Built plant tracking, individual plant management, and user detail screens.</li>
-        <li>Added new feature screens to extend the app’s core functionality.</li>
+        <li>Added new feature screens to extend the app's core functionality.</li>
         <li>Implemented REST API integrations.</li>
       </ul>
     </div>
@@ -798,13 +890,53 @@
 
     <div class="project-card fade-in">
       <div class="project-year">2022</div>
-      <div class="project-name">AHG TIME IN & OUT</div>
+      <div class="project-name">AHG TIME IN &amp; OUT</div>
       <ul class="project-bullets">
         <li>Developed and integrated Home Screen with Company News feed and Time In/Time Out functionality.</li>
         <li>Built foundational Time In and Time Out system for company employees.</li>
       </ul>
     </div>
 
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" style="max-width:1200px;margin:0 auto;">
+  <div class="section-header fade-in">
+    <div class="section-index">04</div>
+    <div class="section-title">// CERTIFICATES</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="certs-grid">
+
+    <div class="cert-card fade-in">
+      <div class="cert-date">February 2, 2025</div>
+      <div class="cert-name">Emerging Technologies: Creating a Mobile App via No-Code Platform with Google Gemini</div>
+      <div class="cert-event">Our Lady of Fatima University, CCS</div>
+      <div class="cert-role">Event Speaker</div>
+    </div>
+
+    <div class="cert-card fade-in">
+      <div class="cert-date">January 9, 2025</div>
+      <div class="cert-name">Low-Code Development with FlutterFlow and Gemini</div>
+      <div class="cert-event">Google Developer Student Clubs PLM</div>
+      <div class="cert-role">Event Speaker</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="max-width:1200px;margin:0 auto;padding-bottom:120px;">
+  <div class="section-header fade-in">
+    <div class="section-index">05</div>
+    <div class="section-title">// EDUCATION</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-card fade-in">
+    <div class="edu-school">Polytechnic University of the Philippines</div>
+    <div class="edu-degree">Bachelor of Science in Information Technology</div>
+    <div class="edu-grad">2022</div>
   </div>
 </section>
 
@@ -833,7 +965,7 @@
   }
   animCursor();
 
-  document.querySelectorAll('a, button, .btn, .project-card, .skill-category, .work-item').forEach(el => {
+  document.querySelectorAll('a, button, .btn, .project-card, .skill-category, .work-item, .cert-card, .edu-card').forEach(el => {
     el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.width = '48px'; ring.style.height = '48px'; });
     el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.width = '32px'; ring.style.height = '32px'; });
   });
